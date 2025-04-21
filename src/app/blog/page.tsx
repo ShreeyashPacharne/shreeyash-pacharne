@@ -1,76 +1,64 @@
-const blogPosts = [
+const posts = [
   {
-    id: 1,
-    title: "Adventure in [Destination]",
+    title: "Optimizing ML Models for Production",
     date: "April 2024",
-    excerpt: "Exploring the beautiful landscapes and culture of [Destination]...",
-    coverImage: "/blog/post1.jpg",
-    tags: ["Travel", "Adventure", "Culture"],
+    readTime: "4 min read",
+    excerpt: "Insights from implementing efficient ML inference systems and best practices for production deployment.",
+    tags: ["Machine Learning", "Production", "Optimization"]
   },
-  // Add more blog posts
+  {
+    title: "Building Scalable AI Systems",
+    date: "March 2024",
+    readTime: "5 min read",
+    excerpt: "Lessons learned from developing and deploying large-scale AI applications using modern cloud infrastructure.",
+    tags: ["AI", "Architecture", "Cloud"]
+  },
+  {
+    title: "Natural Language Processing in Practice",
+    date: "February 2024",
+    readTime: "6 min read",
+    excerpt: "Real-world applications of NLP in building intelligent systems and improving user experiences.",
+    tags: ["NLP", "AI", "Software Engineering"]
+  }
 ];
 
 export default function Blog() {
   return (
-    <div className="min-h-screen pt-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <h1 className="text-4xl font-bold text-gray-900 mb-8">Travel Blog</h1>
-
-        {/* Featured Post */}
-        <div className="mb-12">
-          <div className="relative h-96 rounded-lg overflow-hidden">
-            <div className="absolute inset-0 bg-gray-200 flex items-center justify-center text-gray-500">
-              Featured Post Image
-            </div>
-            <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
-            <div className="absolute bottom-0 left-0 p-6 text-white">
-              <div className="flex space-x-2 mb-2">
-                {blogPosts[0].tags.map((tag, index) => (
-                  <span
-                    key={index}
-                    className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-              <h2 className="text-2xl font-bold mb-2">{blogPosts[0].title}</h2>
-              <p className="text-gray-200">{blogPosts[0].excerpt}</p>
-              <p className="mt-2 text-sm">{blogPosts[0].date}</p>
-            </div>
-          </div>
-        </div>
-
-        {/* Blog Posts Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {blogPosts.map((post) => (
-            <article key={post.id} className="bg-white rounded-lg shadow-lg overflow-hidden">
-              <div className="aspect-w-16 aspect-h-9 bg-gray-200">
-                <div className="w-full h-48 flex items-center justify-center text-gray-500">
-                  Blog Post Image
-                </div>
-              </div>
+    <div className="min-h-screen bg-gray-50 py-20">
+      <div className="max-w-4xl mx-auto container-padding">
+        <h1 className="text-4xl font-bold text-gray-900 mb-8">Technical Blog</h1>
+        <div className="space-y-8">
+          {posts.map((post, index) => (
+            <article key={index} className="bg-white rounded-lg shadow-lg overflow-hidden">
               <div className="p-6">
-                <div className="flex space-x-2 mb-2">
-                  {post.tags.map((tag, index) => (
+                <div className="flex items-center mb-4">
+                  <div className="flex-shrink-0">
+                    <div className="h-10 w-10 rounded-full bg-gray-200" />
+                  </div>
+                  <div className="ml-3">
+                    <p className="text-sm font-medium text-gray-900">Shreeyash Pacharne</p>
+                    <div className="flex space-x-1 text-sm text-gray-500">
+                      <time dateTime={post.date}>{post.date}</time>
+                      <span aria-hidden="true">&middot;</span>
+                      <span>{post.readTime}</span>
+                    </div>
+                  </div>
+                </div>
+                <h2 className="text-xl font-semibold text-gray-900 mb-2">
+                  {post.title}
+                </h2>
+                <p className="text-gray-600 mb-4">
+                  {post.excerpt}
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {post.tags.map((tag, i) => (
                     <span
-                      key={index}
+                      key={i}
                       className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800"
                     >
                       {tag}
                     </span>
                   ))}
-                </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">{post.title}</h3>
-                <p className="text-gray-600 mb-4">{post.excerpt}</p>
-                <div className="flex items-center justify-between">
-                  <span className="text-sm text-gray-500">{post.date}</span>
-                  <a
-                    href={`/blog/${post.id}`}
-                    className="text-indigo-600 hover:text-indigo-500 font-medium"
-                  >
-                    Read More →
-                  </a>
                 </div>
               </div>
             </article>
