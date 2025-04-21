@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-rgb: 79, 70, 229;
+  --secondary-rgb: 236, 72, 153;
+  --accent-rgb: 245, 158, 11;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .container-padding {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-16 sm:py-24;
+  }
+
+  .section-title {
+    @apply text-3xl sm:text-4xl font-bold text-gray-900 mb-12;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-indigo-600 via-pink-600 to-amber-600 bg-clip-text text-transparent;
+  }
+
+  .button-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-indigo-600 hover:bg-indigo-700 transition-colors shadow-sm;
+  }
+
+  .button-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3 border border-gray-300 text-base font-medium rounded-lg text-gray-700 bg-white hover:bg-gray-50 transition-colors shadow-sm;
+  }
+
+  .card {
+    @apply bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow overflow-hidden;
+  }
+
+  .nav-link {
+    @apply px-3 py-2 rounded-lg text-sm font-medium transition-colors;
+  }
+
+  .nav-link-default {
+    @apply text-gray-700 hover:text-gray-900 hover:bg-gray-100;
+  }
+
+  .nav-link-active {
+    @apply text-indigo-700 bg-indigo-50 hover:bg-indigo-100;
+  }
+
+  .footer-link {
+    @apply text-gray-600 hover:text-gray-900 transition-colors;
+  }
+
+  .fade-in-up {
+    @apply animate-[fadeInUp_0.5s_ease-out];
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
