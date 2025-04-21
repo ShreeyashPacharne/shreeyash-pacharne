@@ -1,13 +1,45 @@
 const projects = [
   {
-    title: "Project 1",
-    description: "Description of your first project",
-    technologies: ["React", "Node.js", "MongoDB"],
-    image: "/project1.jpg",
-    github: "https://github.com/yourusername/project1",
-    demo: "https://project1-demo.com",
+    title: "Natural Language to SQL-query Generation",
+    period: "Oct 2024 - Dec 2024",
+    description: "A machine learning system that converts natural language questions into SQL queries",
+    highlights: [
+      "Addressed schema ambiguity, improving column selection accuracy from 50% to 80% using T5",
+      "Enhanced dataset processing, optimizing query execution with WhiSQL, generating 87k+ annotated pairs"
+    ],
+    tags: ["Python", "Machine Learning", "NLP", "SQL", "T5", "WhiSQL"]
   },
-  // Add more projects
+  {
+    title: "Yelp Restaurant Recommender System",
+    period: "Nov 2024 - Dec 2024",
+    description: "A recommendation system for restaurants using Yelp's dataset",
+    highlights: [
+      "Developed a Truncated SVD-based model improving rating prediction accuracy by 12%",
+      "Mapped Yelp reviews to 1.19K+ restaurants, ensuring data integrity and consistency"
+    ],
+    tags: ["Python", "Machine Learning", "SVD", "Data Analysis", "Recommender Systems"]
+  },
+  {
+    title: "Byonic.AI: AI-Driven Demand Generation Platform",
+    period: "Sept 2022 - July 2024",
+    description: "An AI-powered platform for optimizing lead generation and conversion",
+    highlights: [
+      "Optimized real-time data ingestion, enhancing backend scalability and boosting lead processing efficiency by 25%",
+      "Designed interactive dashboards, improving lead conversion visibility and decision-making speed by 15%"
+    ],
+    tags: ["Python", "React", "Node.js", "AI/ML", "Data Visualization"]
+  },
+  {
+    title: "Sign Language Recognition",
+    period: "Apr 2022 - May 2023",
+    description: "Deep CNN approach for accurate alphabet identification in sign language",
+    publication: {
+      title: "Sign Language Recognition: A Deep CNN Approach for Accurate Alphabet Identification",
+      conference: "IJRMETS 2023",
+      guide: "Prof. Dipali Khairnar"
+    },
+    tags: ["Python", "Deep Learning", "Computer Vision", "CNN", "OpenCV"]
+  }
 ];
 
 export default function Projects() {
@@ -33,7 +65,7 @@ export default function Projects() {
                 
                 {/* Technologies */}
                 <div className="mt-4 flex flex-wrap gap-2">
-                  {project.technologies.map((tech, i) => (
+                  {project.tags.map((tech, i) => (
                     <span
                       key={i}
                       className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800"
@@ -43,25 +75,27 @@ export default function Projects() {
                   ))}
                 </div>
 
-                {/* Links */}
-                <div className="mt-6 flex space-x-4">
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50"
-                  >
-                    GitHub
-                  </a>
-                  <a
-                    href={project.demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700"
-                  >
-                    Live Demo
-                  </a>
-                </div>
+                {/* Highlights */}
+                {project.highlights && (
+                  <div className="mt-4">
+                    <h4 className="text-lg font-semibold text-gray-900">Highlights</h4>
+                    <ul className="list-disc pl-4">
+                      {project.highlights.map((highlight, i) => (
+                        <li key={i} className="text-gray-600">{highlight}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                {/* Publication */}
+                {project.publication && (
+                  <div className="mt-4">
+                    <h4 className="text-lg font-semibold text-gray-900">Publication</h4>
+                    <p className="text-gray-600">{project.publication.title}</p>
+                    <p className="text-gray-600">{project.publication.conference}</p>
+                    <p className="text-gray-600">Guide: {project.publication.guide}</p>
+                  </div>
+                )}
               </div>
             </div>
           ))}

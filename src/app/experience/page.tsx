@@ -4,14 +4,39 @@ const experiences = [
   {
     title: "Master's Student",
     company: "University of California San Diego",
-    period: "2024 - Present",
+    period: "2024 - 2026",
     description: "Pursuing MS in Computer Science with focus on AI and Machine Learning",
     highlights: [
       "Research in Optimized ML Inference on Heterogeneous Systems",
+      "Relevant Coursework: Algorithm Design and Analysis, Operating Systems Principles, Statistical Natural Language Processing",
       "Academic projects in C/C++, Python"
     ]
   },
-  // Add more experiences here
+  {
+    title: "Associate Software Engineer",
+    company: "Inventive IT",
+    period: "Aug 2023 - July 2024",
+    description: "Led development of critical backend systems and AI-driven solutions",
+    highlights: [
+      "Architected vendor APIs integration, reducing data synchronization time by 20%",
+      "Engineered in-app chat with Microsoft Teams, achieving 91% improvement in response time",
+      "Developed AI chatbot using LLaMA 3, boosting campaign activity by 15%",
+      "Optimized reporting workflows, cutting report generation time by 50%",
+      "Improved operational stability by 30% through CI/CD pipeline enhancements"
+    ]
+  },
+  {
+    title: "Software Engineering Intern",
+    company: "Inventive IT",
+    period: "Sept 2022 - Aug 2023",
+    description: "Developed robust backend systems and real-time applications",
+    highlights: [
+      "Built RESTful APIs using Python and Flask, enhancing data retrieval by 25%",
+      "Integrated WebSockets with Redis, reducing notification latency by 30%",
+      "Automated email scheduling, cutting manual processing by 40%",
+      "Collaborated on cross-functional projects using Angular and TypeScript"
+    ]
+  }
 ];
 
 export default function Experience() {

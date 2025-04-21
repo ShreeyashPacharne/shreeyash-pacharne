@@ -1,19 +1,103 @@
 export default function Resume() {
-  return (
-    <div className="min-h-screen pt-20">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="flex justify-between items-center mb-8">
-          <h1 className="text-4xl font-bold text-gray-900">Resume</h1>
-          <a
-            href="/your-resume.pdf"
-            className="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700"
-            download
-          >
-            Download PDF
-          </a>
-        </div>
+  const skills = {
+    languages: ["Python", "C/C++", "JavaScript", "TypeScript", "Flask", "Angular", "REST API", "PostgreSQL", "SQLAlchemy", "NoSQL", "GraphQL"],
+    devops: ["Redis", "Kubernetes", "Docker", "CI/CD", "Jenkins", "Git", "Linux", "Microservices"],
+    cloud: ["AWS", "Azure", "Caching"],
+    ai_ml: ["Gen AI", "PyTorch", "Langchain", "LLMS", "Pandas", "Machine Learning", "FullStack Backend", "Object-Oriented Design"]
+  };
 
-        {/* Resume Content */}
+  const education = [
+    {
+      school: "University of California San Diego (UCSD)",
+      degree: "Masters of Science in Computer Science",
+      period: "2024 - 2026",
+      gpa: "GPA: 3.8/4.00",
+      location: "San Diego, CA",
+      courses: [
+        "Algorithm Design and Analysis",
+        "Operating Systems Principles",
+        "Statistical Natural Language Processing",
+        "Recommender Systems and Web Mining",
+        "ML: Learning Algorithms, Fairness, Bias & Transparency in ML"
+      ]
+    },
+    {
+      school: "Savitribai Phule Pune University",
+      degree: "Bachelor of Engineering in Computer Engineering",
+      period: "2019 - 2023",
+      gpa: "First Class with Distinction (GPA: 3.49/4.00)",
+      location: "Pune, IN"
+    }
+  ];
+
+  const experience = [
+    {
+      title: "Associate Software Engineer",
+      company: "Inventive IT",
+      period: "Aug 2023 - July 2024",
+      location: "Pune, IN",
+      achievements: [
+        "Architected and deployed vendor APIs to integrate critical external data feeds into our business intelligence platform – reducing system downtime by 20% and enabling near real-time data synchronization",
+        "Engineered an in-app chat solution by integrating Microsoft Teams, replacing traditional email query handling and achieving a 91% improvement in client response times",
+        "Spearheaded the design and implementation of a revenue-driving AI chatbot using Llama 3 (7B), LangChain, and Docker on AWS – delivering personalized user insights that boosted client campaign activity by 15%",
+        "Optimized automated business reporting workflows by leveraging Python, PyPDF, and data visualization tools to generate dynamic pacing, billing, and campaign overview reports – cutting report generation time by 50%",
+        "Collaborated with IT and cross-functional teams to establish resource systems (VMware hypervisors, Linux systems, A100 GPUs) and orchestrate CI/CD pipelines with Jenkins – boosting operational stability by 30% and ensuring secure production deployments"
+      ]
+    },
+    {
+      title: "Software Engineering Intern",
+      company: "Inventive IT",
+      period: "Sept 2022 - Aug 2023",
+      location: "Pune, IN",
+      achievements: [
+        "Developed robust backend RESTful APIs using Python, Flask, and SQLAlchemy to perform CRUD operations on a PostgreSQL database for a client-facing SaaS platform – enhancing data retrieval efficiency by 25%",
+        "Engineered a bi-directional real-time notification system by integrating WebSockets with Redis, which reduced client notification latency by 30% and increased user engagement",
+        "Implemented automated email scheduling and token-based authentication modules that streamlined client communications – cutting manual processing time by 40%",
+        "Collaborated with cross-functional agile teams to design and deliver scalable front-end components using Angular and TypeScript, ensuring seamless integration with backend services",
+        "Conducted comprehensive unit and functional testing using Postman and browser debugging tools, identifying and resolving critical production bugs to boost overall system stability"
+      ]
+    }
+  ];
+
+  const projects = [
+    {
+      title: "Natural Language to SQL-query Generation",
+      period: "Oct 2024 - Dec 2024",
+      achievements: [
+        "Addressed schema ambiguity, improving column selection accuracy from 50% (baseline) to 80% using T5",
+        "Enhanced dataset processing, optimizing query execution with WhiSQL, generating 87k+ annotated pairs"
+      ]
+    },
+    {
+      title: "Yelp Restaurant Recommender System",
+      period: "Nov 2024 - Dec 2024",
+      achievements: [
+        "Developed a Truncated SVD-based model improving rating prediction accuracy by 12%",
+        "Mapped Yelp reviews to 1.19K+ restaurants, ensuring data integrity and consistency"
+      ]
+    },
+    {
+      title: "Byonic.AI: AI-Driven Demand Generation Platform",
+      period: "Sept 2022 - July 2024",
+      achievements: [
+        "Optimized real-time data ingestion, enhancing backend scalability and boosting lead processing efficiency by 25%",
+        "Designed interactive dashboards, improving lead conversion visibility and decision-making speed by 15%"
+      ]
+    }
+  ];
+
+  const publications = [
+    {
+      title: "Sign Language Recognition: A Deep CNN Approach for Accurate Alphabet Identification",
+      conference: "IJRMETS 2023",
+      period: "Apr 2022 - May 2023",
+      guide: "Guide – Prof. Dipali Khairnar"
+    }
+  ];
+
+  return (
+    <div className="min-h-screen bg-gray-50 py-20">
+      <div className="max-w-4xl mx-auto container-padding">
         <div className="bg-white rounded-lg shadow-lg p-8">
           {/* Header */}
           <header className="mb-8 pb-8 border-b border-gray-200">
@@ -33,75 +117,109 @@ export default function Resume() {
             </div>
           </header>
 
-          {/* Education */}
-          <section className="mb-8">
-            <h3 className="text-2xl font-semibold text-gray-900 mb-4">Education</h3>
-            <div className="mb-4">
-              <h4 className="text-lg font-medium text-gray-900">Master of Science in Computer Science</h4>
-              <p className="text-gray-600">University of California San Diego</p>
-              <p className="text-gray-500">2024 - Present</p>
-              <ul className="mt-2 list-disc list-inside text-gray-600">
-                <li>Relevant Coursework: [Courses]</li>
-                <li>Research Focus: [Research Areas]</li>
-              </ul>
-            </div>
-          </section>
-
-          {/* Experience */}
-          <section className="mb-8">
-            <h3 className="text-2xl font-semibold text-gray-900 mb-4">Professional Experience</h3>
-            <div className="space-y-6">
-              {/* Add your experience items here */}
-              <div>
-                <h4 className="text-lg font-medium text-gray-900">[Job Title]</h4>
-                <p className="text-gray-600">[Company Name]</p>
-                <p className="text-gray-500">[Date Range]</p>
-                <ul className="mt-2 list-disc list-inside text-gray-600">
-                  <li>[Achievement/Responsibility 1]</li>
-                  <li>[Achievement/Responsibility 2]</li>
-                  <li>[Achievement/Responsibility 3]</li>
-                </ul>
-              </div>
-            </div>
-          </section>
-
           {/* Skills */}
           <section className="mb-8">
             <h3 className="text-2xl font-semibold text-gray-900 mb-4">Technical Skills</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
-                <h4 className="text-lg font-medium text-gray-900 mb-2">Programming Languages</h4>
-                <p className="text-gray-600">[Languages]</p>
+                <h4 className="font-medium text-gray-900 mb-2">Languages & Frameworks</h4>
+                <p className="text-gray-600">{skills.languages.join(", ")}</p>
               </div>
               <div>
-                <h4 className="text-lg font-medium text-gray-900 mb-2">Frameworks & Tools</h4>
-                <p className="text-gray-600">[Frameworks]</p>
+                <h4 className="font-medium text-gray-900 mb-2">DevOps & Cloud</h4>
+                <p className="text-gray-600">{[...skills.devops, ...skills.cloud].join(", ")}</p>
               </div>
-              <div>
-                <h4 className="text-lg font-medium text-gray-900 mb-2">Databases</h4>
-                <p className="text-gray-600">[Databases]</p>
-              </div>
-              <div>
-                <h4 className="text-lg font-medium text-gray-900 mb-2">Other Technologies</h4>
-                <p className="text-gray-600">[Technologies]</p>
+              <div className="md:col-span-2">
+                <h4 className="font-medium text-gray-900 mb-2">AI/ML & Other</h4>
+                <p className="text-gray-600">{skills.ai_ml.join(", ")}</p>
               </div>
             </div>
           </section>
 
-          {/* Projects */}
-          <section>
-            <h3 className="text-2xl font-semibold text-gray-900 mb-4">Notable Projects</h3>
-            <div className="space-y-4">
-              {/* Add your project items here */}
-              <div>
-                <h4 className="text-lg font-medium text-gray-900">[Project Name]</h4>
-                <p className="text-gray-600 mb-2">[Technologies Used]</p>
+          {/* Education */}
+          <section className="mb-8">
+            <h3 className="text-2xl font-semibold text-gray-900 mb-4">Education</h3>
+            {education.map((edu, index) => (
+              <div key={index} className="mb-6">
+                <div className="flex justify-between items-start">
+                  <div>
+                    <h4 className="font-medium text-gray-900">{edu.school}</h4>
+                    <p className="text-gray-600">{edu.degree}</p>
+                    {edu.courses && (
+                      <ul className="list-disc list-inside text-gray-600 mt-2">
+                        {edu.courses.map((course, i) => (
+                          <li key={i}>{course}</li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
+                  <div className="text-right">
+                    <p className="text-gray-600">{edu.period}</p>
+                    <p className="text-gray-600">{edu.location}</p>
+                    <p className="text-gray-600">{edu.gpa}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </section>
+
+          {/* Experience */}
+          <section className="mb-8">
+            <h3 className="text-2xl font-semibold text-gray-900 mb-4">Professional Experience</h3>
+            {experience.map((exp, index) => (
+              <div key={index} className="mb-6">
+                <div className="flex justify-between items-start mb-2">
+                  <div>
+                    <h4 className="font-medium text-gray-900">{exp.title}</h4>
+                    <p className="text-gray-600">{exp.company}</p>
+                  </div>
+                  <div className="text-right">
+                    <p className="text-gray-600">{exp.period}</p>
+                    <p className="text-gray-600">{exp.location}</p>
+                  </div>
+                </div>
                 <ul className="list-disc list-inside text-gray-600">
-                  <li>[Key Feature/Achievement 1]</li>
-                  <li>[Key Feature/Achievement 2]</li>
+                  {exp.achievements.map((achievement, i) => (
+                    <li key={i}>{achievement}</li>
+                  ))}
                 </ul>
               </div>
-            </div>
+            ))}
+          </section>
+
+          {/* Projects */}
+          <section className="mb-8">
+            <h3 className="text-2xl font-semibold text-gray-900 mb-4">Projects</h3>
+            {projects.map((project, index) => (
+              <div key={index} className="mb-6">
+                <div className="flex justify-between items-start mb-2">
+                  <h4 className="font-medium text-gray-900">{project.title}</h4>
+                  <p className="text-gray-600">{project.period}</p>
+                </div>
+                <ul className="list-disc list-inside text-gray-600">
+                  {project.achievements.map((achievement, i) => (
+                    <li key={i}>{achievement}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </section>
+
+          {/* Publications */}
+          <section>
+            <h3 className="text-2xl font-semibold text-gray-900 mb-4">Publications</h3>
+            {publications.map((pub, index) => (
+              <div key={index} className="mb-6">
+                <div className="flex justify-between items-start mb-2">
+                  <div>
+                    <h4 className="font-medium text-gray-900">{pub.title}</h4>
+                    <p className="text-gray-600">{pub.conference}</p>
+                    <p className="text-gray-600">{pub.guide}</p>
+                  </div>
+                  <p className="text-gray-600">{pub.period}</p>
+                </div>
+              </div>
+            ))}
           </section>
         </div>
       </div>
