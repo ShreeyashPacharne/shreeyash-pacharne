@@ -40,20 +40,20 @@ export default function Contact() {
                 <div>
                   <h3 className="text-lg font-medium text-gray-900">Email</h3>
                   <a href="mailto:your.email@example.com" className="mt-2 text-indigo-600 hover:text-indigo-500">
-                    your.email@example.com
+                    spacharne@ucsd.edu
                   </a>
                 </div>
 
                 <div>
                   <h3 className="text-lg font-medium text-gray-900">Social</h3>
                   <div className="mt-2 flex space-x-6">
-                    <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-gray-900">
+                    <a href="https://github.com/shreeyashpacharne" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-gray-900">
                       GitHub
                     </a>
-                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-gray-900">
+                    <a href="https://linkedin.com/in/shreeyash-pacharne" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-gray-900">
                       LinkedIn
                     </a>
-                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-gray-900">
+                    <a href="https://twitter.com/capNovaX" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-gray-900">
                       Twitter
                     </a>
                   </div>
